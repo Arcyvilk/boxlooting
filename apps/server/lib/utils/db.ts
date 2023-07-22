@@ -3,6 +3,9 @@ import { Db, MongoClient } from "mongodb";
 
 import { env } from "utils/env";
 
+/**
+ * Class handling connection to the proper Mongo instance.
+ */
 export class MongoInstance {
   public client: MongoClient;
   public db: Db;
