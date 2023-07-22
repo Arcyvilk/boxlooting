@@ -44,6 +44,7 @@ const Title = styled.h1`
   text-align: center;
   text-shadow: 0 0 10px black;
 `;
+
 const StyledButton = styled.button`
   all: unset;
   cursor: pointer;
