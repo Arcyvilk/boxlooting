@@ -13,7 +13,9 @@
   "author": "Arcyvilk",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^21.3.2"
+    "@boxlooting/utils": "*",
+    "@hapi/hapi": "^21.3.2",
+    "mongodb": "^5.7.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
