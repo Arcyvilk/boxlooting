@@ -3,21 +3,23 @@
   "version": "0.1.0",
   "description": "",
   "main": "boxserver.ts",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tsx lib/lootserver.ts"
-  },
   "author": "Arcyvilk",
   "license": "ISC",
+  "scripts": {
+    "build": "tsc & tsc-alias",
+    "prod": "node dist/lootserver.js",
+    "dev": "npx tsx lib/lootserver.ts"
+  },
   "dependencies": {
     "@boxlooting/utils": "*",
     "@hapi/hapi": "^21.3.2",
     "mongodb": "^5.7.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "tsc-alias": "^1.8.7"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
