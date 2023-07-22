@@ -1,16 +1,13 @@
 {
-  "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "baseUrl": "./lib",
-    "rootDir": "./lib",
-    "lib": ["dom", "dom.iterable", "es2021"],
-    "target": "es2021",
-    "module": "es2022",
-    "checkJs": true,
-    "outDir": "./dist",
-    "declaration": true,
-    "declarationDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": true
   },
-  "include": ["lib/**/*"],
-  "exclude": ["node_modules", "*.js"]
+  "exclude": ["node_modules"]
 }

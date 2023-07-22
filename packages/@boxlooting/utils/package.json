@@ -1,10 +1,6 @@
 {
     "name": "@boxlooting/utils",
-    "version": "0.0.0",
-    "private": true,
-    "license": "MIT",
-    "publishConfig": {
-      "access": "public"
-    }
+    "main": "lib/index.ts",
+    "types": "lib/index.ts"
   }
   
