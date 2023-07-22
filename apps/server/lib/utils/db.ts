@@ -10,8 +10,6 @@ export class MongoInstance {
   constructor() {
     try {
       const url = env.DATABASE_URL;
-      console.log(url);
-      console.log(process.env.DATABASE_URL);
       if (!url) {
         throw new Error("No database URL provided");
       }
