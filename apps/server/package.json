@@ -16,6 +16,7 @@
     "mongodb": "^5.7.0"
   },
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "nodemon": "^3.0.1",
     "tsc-alias": "^1.8.7"
   },

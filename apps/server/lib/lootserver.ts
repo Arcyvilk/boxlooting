@@ -1,4 +1,7 @@
-import { serverV1 } from "./routes";
+import { MongoInstance } from "utils/db";
+import { serverV1 } from "routes";
+
+export const mongoInstance = new MongoInstance();
 
 const init = async () => {
   await serverV1.start();

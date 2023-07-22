@@ -1,9 +1,7 @@
 import { Request } from "@hapi/hapi";
-import { BoxReward, Reward } from "@boxlooting/utils";
+import { Box, BoxReward, Reward } from "@boxlooting/utils";
 
-// TEMP
-import { boxes } from "data/boxes";
-import { rewards } from "data/rewards";
+import { getDataFromDb } from "utils/getData";
 
 // const BASE_URL =
 //   "lifeup://api/reward?type=item&content=Learn API Calls&number=1&item_name=treasure";
@@ -14,7 +12,10 @@ type FoundRewardWithQuantity = Omit<
   "quantityMin" | "quantityMax"
 > & { quantity: number };
 
-export const getLootbox = (request: Request) => {
+export const getLootbox = async (request: Request) => {
+  const boxes = await getDataFromDb<Box>("boxes");
+  const rewards = await getDataFromDb<Reward>("rewards");
+
   const lootboxId = request.params.lootbox;
   const box = boxes.find((box) => box.id === lootboxId);
   if (!box) return []; // This should never happen

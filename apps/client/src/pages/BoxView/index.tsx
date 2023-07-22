@@ -20,10 +20,10 @@ export const BoxView = (props: Props) => {
 
   return (
     <Wrapper>
-      <Flex align justify>
+      <Flex $align $justify>
         <h1>{box.name.toUpperCase()}</h1>
       </Flex>
-      <Flex column align justify>
+      <Flex $column $align $justify>
         <Button onClick={onRedeemLoot} disabled={isRedeemed}>
           Redeem your loot
         </Button>
