@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc & tsc-alias",
     "prod": "node dist/lootserver.js",
-    "dev": "npx tsx lib/lootserver.ts"
+    "dev": "env HOST=localhost npx tsx lib/lootserver.ts"
   },
   "dependencies": {
     "@boxlooting/utils": "*",

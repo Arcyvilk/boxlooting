@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Box } from "@boxlooting/utils";
 
-import { Button, Flex, Wrapper } from "components";
+import { Flex, Wrapper } from "components";
 import { useRewards } from "hooks/useAPI";
+import { styled } from "styled-components";
+import { Chest } from "components/Chest";
+import { ChestType } from "components/Chest/chestMap";
 
 type Props = {
   box: Box;
@@ -15,19 +18,33 @@ export const BoxView = (props: Props) => {
 
   const onRedeemLoot = () => {
     setIsRedeemed(true);
+  };
+
+  const onAnimationFinish = () => {
     rewards.links.forEach((link: string) => window.open(link, "_blank"));
   };
 
   return (
     <Wrapper>
       <Flex $align $justify>
-        <h1>{box.name.toUpperCase()}</h1>
+        <Title>{box.name.toUpperCase()}</Title>
       </Flex>
       <Flex $column $align $justify>
-        <Button onClick={onRedeemLoot} disabled={isRedeemed}>
-          Redeem your loot
-        </Button>
+        <StyledButton onClick={onRedeemLoot} disabled={isRedeemed}>
+          <Chest type={ChestType.GOLD} onAnimationFinish={onAnimationFinish} />
+        </StyledButton>
       </Flex>
     </Wrapper>
   );
 };
+
+const Title = styled.h1`
+  font-size: 4em;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 10px black;
+`;
+const StyledButton = styled.button`
+  all: unset;
+  cursor: pointer;
+`;
