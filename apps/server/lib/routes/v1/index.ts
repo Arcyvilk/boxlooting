@@ -2,12 +2,13 @@ import Hapi from "@hapi/hapi";
 
 import { getBoxes } from "routes/v1/getBoxes";
 import { getLootbox } from "routes/v1/getLootbox";
+import { env } from "utils/env";
 
 const BASE_PATH = "/api/v1";
 
 export const serverV1 = Hapi.server({
   port: 1717,
-  host: "localhost",
+  host: env.HOST,
   routes: {
     cors: {
       origin: ["*"],
