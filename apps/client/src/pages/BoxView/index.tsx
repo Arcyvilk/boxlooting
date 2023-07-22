@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Box } from "@boxlooting/utils";
 
-import { Button, Flex, Wrapper } from 'components';
-import { Box } from 'data/boxes';
-import { getLinks } from 'utils/getLinks';
+import { Button, Flex, Wrapper } from "components";
+import { useRewards } from "hooks/useAPI";
 
 type Props = {
   box: Box;
@@ -11,11 +11,11 @@ type Props = {
 export const BoxView = (props: Props) => {
   const { box } = props;
   const [isRedeemed, setIsRedeemed] = useState(false);
+  const { rewards } = useRewards(box.id);
 
   const onRedeemLoot = () => {
     setIsRedeemed(true);
-    const links = getLinks(box.id);
-    links.forEach((link: string) => window.open(link, '_blank'));
+    rewards.links.forEach((link: string) => window.open(link, "_blank"));
   };
 
   return (

@@ -7,6 +7,6 @@
     "declaration": true,
     "declarationDir": "dist"
   },
-  "include": ["lib/**/*", "../../packages/@boxlooting/utils/lib/types.ts"],
+  "include": ["lib/**/*"],
   "exclude": ["dist"]
 }

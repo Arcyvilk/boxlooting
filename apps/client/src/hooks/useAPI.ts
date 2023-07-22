@@ -16,3 +16,18 @@ export const useBoxes = () => {
 
   return { boxes, isLoading, isFetched, isError };
 };
+
+export const useRewards = (id: string) => {
+  const {
+    data: rewards = [],
+    isLoading,
+    isFetched,
+    isError,
+  } = useQuery(["reward", id], async () => {
+    const res = await fetch(`${BASE_URL}/lootbox/${id}`);
+    const data = await res.json();
+    return data;
+  });
+
+  return { rewards, isLoading, isFetched, isError };
+};

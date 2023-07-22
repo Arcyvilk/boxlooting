@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Size } from 'components';
+import styled from "styled-components";
+import { Size } from "components";
 
 type PropsIgnore = {
   children?: React.ReactNode;
@@ -13,7 +13,7 @@ type Props = {
   width?: string | Size;
   height?: string | Size;
 } & PropsIgnore &
-  Omit<React.CSSProperties, 'width' | 'height'>;
+  Omit<React.CSSProperties, "width" | "height">;
 
 export const Flex = styled.div.attrs((props: Props) => {
   const {
@@ -26,10 +26,10 @@ export const Flex = styled.div.attrs((props: Props) => {
     ...style
   } = props;
   const newStyle: React.CSSProperties = {};
-  if (row) newStyle.flexDirection = 'row';
-  if (column) newStyle.flexDirection = 'column';
-  if (justify) newStyle.justifyContent = 'center';
-  if (align) newStyle.alignItems = 'center';
+  if (row) newStyle.flexDirection = "row";
+  if (column) newStyle.flexDirection = "column";
+  if (justify) newStyle.justifyContent = "center";
+  if (align) newStyle.alignItems = "center";
   return {
     style: { ...newStyle, ...style },
   };

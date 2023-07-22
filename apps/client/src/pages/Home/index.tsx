@@ -1,7 +1,7 @@
 import { Box } from "@boxlooting/utils";
 
 import { Button, Wrapper } from "components";
-import { useBoxes } from "hooks/useBoxes";
+import { useBoxes } from "hooks/useAPI";
 
 export const Home = () => {
   const { boxes = [] } = useBoxes();

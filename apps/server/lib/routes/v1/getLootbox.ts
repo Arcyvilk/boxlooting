@@ -1,8 +1,9 @@
 import { Request } from "@hapi/hapi";
+import { BoxReward, Reward } from "@boxlooting/utils";
 
 // TEMP
-import { BoxReward, boxes } from "data/boxes";
-import { Reward, rewards } from "data/rewards";
+import { boxes } from "data/boxes";
+import { rewards } from "data/rewards";
 
 // const BASE_URL =
 //   "lifeup://api/reward?type=item&content=Learn API Calls&number=1&item_name=treasure";
