@@ -10,4 +10,5 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;

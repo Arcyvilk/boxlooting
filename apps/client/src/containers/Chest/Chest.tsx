@@ -40,7 +40,9 @@ export const Chest = (props: Props) => {
       options={defaultOptions}
       height={200}
       width={200}
-      style={{ filter: "drop-shadow(0 10px 10px black)" }}
+      style={{
+        filter: "drop-shadow(0 0px 10px black) drop-shadow(0 0px 50px #fdc000)",
+      }}
       eventListeners={[
         {
           eventName: "complete",

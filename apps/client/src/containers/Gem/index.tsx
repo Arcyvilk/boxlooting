@@ -29,7 +29,9 @@ export const Gem = ({ link }: Props) => {
         options={defaultOptions}
         height={100}
         width={100}
-        style={{ filter: "drop-shadow(0 10px 10px black)" }}
+        style={{
+          filter: "drop-shadow(0 0px 10px black) drop-shadow(0 0 50px #aac6f0)",
+        }}
         eventListeners={[
           {
             eventName: "click",
