@@ -3,7 +3,6 @@ import { Size } from "components";
 
 type PropsIgnore = {
   children?: React.ReactNode;
-  theme?: any;
 };
 type Props = {
   $row?: boolean;
@@ -22,7 +21,6 @@ export const Flex = styled.div.attrs((props: Props) => {
     $justify,
     $align,
     children: _c, // ignore
-    theme: _t, // ignore
     ...style
   } = props;
   const newStyle: React.CSSProperties = {};

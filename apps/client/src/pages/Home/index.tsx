@@ -1,15 +1,16 @@
+import { styled } from "styled-components";
 import { Box } from "@boxlooting/utils";
 
-import { Button, Wrapper } from "components";
+import { Button, Title } from "components";
+import { Wrapper } from "containers";
 import { useBoxes } from "hooks/useAPI";
-import { styled } from "styled-components";
 
 export const Home = () => {
   const { boxes = [] } = useBoxes();
 
   return (
     <Wrapper>
-      <Title>Choose a lootbox</Title>
+      <Title title="Choose a lootbox" />
       <Boxes>
         {boxes.map((box: Box) => (
           <Button onClick={() => window.open(`/${box.id}`, "_self")}>
@@ -20,14 +21,6 @@ export const Home = () => {
     </Wrapper>
   );
 };
-
-const Title = styled.h1`
-  font-size: 3em;
-  color: white;
-  text-align: center;
-  text-shadow: 0 0 10px black;
-  margin-bottom: 2em;
-`;
 
 const Boxes = styled.div`
   display: flex;
