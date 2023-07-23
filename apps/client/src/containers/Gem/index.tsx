@@ -41,7 +41,8 @@ export const Gem = ({ link }: Props) => {
   );
 };
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{ disabled?: boolean }>`
   all: unset;
   cursor: pointer;
+  filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "grayscale(0)")};
 `;
