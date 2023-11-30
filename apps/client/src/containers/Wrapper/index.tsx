@@ -11,4 +11,5 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  gap: 24px;
 `;
