@@ -1,7 +1,7 @@
 import { log } from "@boxlooting/utils";
 import { Db, MongoClient } from "mongodb";
 
-import { env } from "utils/env";
+import { env } from "./env";
 
 /**
  * Class handling connection to the proper Mongo instance.

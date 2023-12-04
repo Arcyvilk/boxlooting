@@ -1,4 +1,4 @@
-import { mongoInstance } from "lootserver";
+import { mongoInstance } from "../lootserver";
 import { Document, WithId } from "mongodb";
 
 export const getDataFromDb = async <T extends Document>(

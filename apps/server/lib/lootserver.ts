@@ -1,5 +1,5 @@
-import { MongoInstance } from "utils/db";
-import { serverV1 } from "routes";
+import { MongoInstance } from "./utils/db";
+import { serverV1 } from "./routes";
 
 export const mongoInstance = new MongoInstance();
 

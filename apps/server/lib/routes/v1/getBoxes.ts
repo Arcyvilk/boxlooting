@@ -1,5 +1,5 @@
 import { Box } from "@boxlooting/utils";
-import { getDataFromDb } from "utils/getData";
+import { getDataFromDb } from "../../utils/getData";
 
 export const getBoxes = async () => {
   const boxes = await getDataFromDb<Box>("boxes");

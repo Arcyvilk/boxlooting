@@ -1,8 +1,8 @@
 import Hapi from "@hapi/hapi";
 
-import { getBoxes } from "routes/v1/getBoxes";
-import { getLootbox } from "routes/v1/getLootbox";
-import { env } from "utils/env";
+import { getBoxes } from "./getBoxes";
+import { getLootbox } from "./getLootbox";
+import { env } from "../../utils/env";
 
 const BASE_PATH = "/api/v1";
 

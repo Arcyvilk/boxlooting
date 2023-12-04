@@ -1,1 +1,1 @@
-export { serverV1 } from "routes/v1";
+export { serverV1 } from "./v1";
