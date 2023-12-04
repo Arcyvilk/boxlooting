@@ -6,8 +6,8 @@
   "author": "Arcyvilk",
   "scripts": {
     "dev": "env HOST=localhost vite",
-    "prod": "env HOST=65.108.214.190 vite",
-    "build": "env HOST=65.108.214.190 tsc && env HOST=65.108.214.190 vite build",
+    "prod": "env HOST=api.loot.gada.cz vite",
+    "build": "env HOST=api.loot.gada.cz tsc && env HOST=api.loot.gada.cz vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
