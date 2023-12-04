@@ -4,6 +4,7 @@ import { Box } from "@boxlooting/utils";
 import { useBoxes } from "hooks/useAPI";
 import { Home } from "pages/Home";
 import { BoxView } from "pages/BoxView";
+import { Map } from "pages/Map";
 
 export const Router = () => {
   const { boxes = [] } = useBoxes();
@@ -11,8 +12,9 @@ export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/map" element={<Map />} />
       {boxes.map((box: Box) => (
-        <Route path={`/${box.id}`} element={<BoxView box={box} />} />
+        <Route path={`/box/${box.id}`} element={<BoxView box={box} />} />
       ))}
       <Route element={<Home />} />
     </Routes>

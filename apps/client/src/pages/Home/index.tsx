@@ -13,7 +13,7 @@ export const Home = () => {
       <Title title="Choose a lootbox" />
       <Boxes>
         {boxes.map((box: Box) => (
-          <Button onClick={() => window.open(`/${box.id}`, "_self")}>
+          <Button onClick={() => window.open(`/box/${box.id}`, "_self")}>
             {box.name.toUpperCase()}
           </Button>
         ))}
