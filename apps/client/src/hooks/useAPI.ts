@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
-const BASE_URL = `https://${process.env.HOST ?? "localhost"}/api/v1`;
+const BASE_URL = process.env.host
+  ? `https://${process.env.HOST}/api/v1`
+  : `http://localhost:1717/api/v1`;
 
 export const useBoxes = () => {
   const {

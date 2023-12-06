@@ -1,32 +1,45 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import L from "leaflet";
+
 import { Title } from "components";
 import { Wrapper } from "containers";
-
-const offset = 0.001;
+import styled from "styled-components";
 
 export const Map = () => {
   const [coords, setCoords] = useState([0, 0]);
-  const [mapUrl, setMapUrl] = useState("");
+  const [map, setMap] = useState<L.Map>();
+  const [youMarker, setYouMarker] = useState<L.Marker>();
 
   const geo = useMemo(() => navigator.geolocation, []);
 
   useEffect(() => {
-    const interval = setInterval(getPosition, 1000);
     getPosition();
+    const interval = setInterval(getPosition, 5000);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (!map && coords[0] && coords[1]) {
+      const newMap = initializeMap(coords, 15);
+      const newMarker = L.marker(L.latLng(coords[0], coords[1]))
+        .bindPopup("THIS IS YOU")
+        .addTo(newMap);
+      setMap(newMap);
+      setYouMarker(newMarker);
+    }
+  }, [map, coords[0], coords[1]]);
+
+  useEffect(() => {
+    if (map) {
+      map.setView(L.latLng(coords[0], coords[1]));
+    }
+  }, [map, coords[0], coords[1]]);
+
   const getPosition = () => {
     geo.getCurrentPosition((position) => {
-      const { latitude: lat, longitude: long } = position.coords;
-      const url = `https://www.openstreetmap.org/export/embed.html?bbox=${
-        long - offset
-      }%2C${lat - offset}%2C${long + offset}%2C${
-        lat + offset
-      }&amp;layer=mapnik&amp;marker=${lat}%2C${long}`;
-      setCoords([lat, long]);
-      setMapUrl(url);
-      console.log(url);
+      const { latitude, longitude } = position.coords;
+      setCoords([latitude, longitude]);
+      youMarker?.setLatLng(L.latLng(latitude, longitude));
     });
   };
 
@@ -38,13 +51,28 @@ export const Map = () => {
           {coords[0]}, {coords[1]}
         </span>
       </div>
-      <iframe
-        id="map"
-        width="425"
-        height="350"
-        src={mapUrl}
-        style={{ border: "1px solid black" }}
-      ></iframe>
+      <StyledMap id="map" />
     </Wrapper>
   );
 };
+
+const initializeMap = (coords: number[], zoom: number) => {
+  const map = L.map("map", {
+    center: L.latLng(coords[0], coords[1]),
+    zoom,
+  });
+  L.tileLayer(`https://tile.openstreetmap.org/{z}/{x}/{y}.png`, {
+    maxZoom: 20,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  // show the scale bar on the lower left corner
+  L.control.scale({ imperial: false, metric: true }).addTo(map);
+
+  return map;
+};
+
+const StyledMap = styled.div`
+  width: 800px;
+  height: 600px;
+`;
