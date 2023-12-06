@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import L from "leaflet";
 
 import { Title } from "components";
@@ -21,7 +21,9 @@ export const Map = () => {
   useEffect(() => {
     if (!map && coords[0] && coords[1]) {
       const newMap = initializeMap(coords, 15);
-      const newMarker = L.marker(L.latLng(coords[0], coords[1]))
+      const newMarker = L.marker(L.latLng(coords[0], coords[1]), {
+        icon: markerIcon,
+      })
         .bindPopup("THIS IS YOU")
         .addTo(newMap);
       setMap(newMap);
@@ -55,6 +57,16 @@ export const Map = () => {
     </Wrapper>
   );
 };
+
+const markerIcon = L.icon({
+  iconUrl: "https://cdn.arcyvilk.com/loot/marker-icon.png",
+  shadowUrl: "https://cdn.arcyvilk.com/loot/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41],
+});
 
 const initializeMap = (coords: number[], zoom: number) => {
   const map = L.map("map", {
