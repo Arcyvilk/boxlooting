@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const BASE_URL = process.env.host
+const BASE_URL = process.env.HOST
   ? `https://${process.env.HOST}/api/v1`
   : `http://localhost:1717/api/v1`;
 
