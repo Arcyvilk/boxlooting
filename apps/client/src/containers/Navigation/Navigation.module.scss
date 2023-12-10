@@ -1,9 +1,34 @@
 .navigation {
   display: flex;
   width: 100%;
-  padding: 1em;
   position: sticky;
   top: 0;
-  background-color: black;
-  color: white;
+  border: 4px solid black;
+  box-sizing: border-box;
+  
+  &__button {
+    all: unset;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 1em 0.5em;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: rgba(255,255,255,0.8);
+    transition: 0.2s background-color;
+
+
+    &:not(:last-child) {
+      border-right: 4px solid black;
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0,1);
+    }
+  }
+}
+
+.active {
+  color: red;
 }

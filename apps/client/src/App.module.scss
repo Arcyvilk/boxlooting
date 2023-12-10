@@ -8,4 +8,12 @@
   align-items: center;
   overflow: hidden;
   gap: 24px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: sticky;
+    top: 0;
+  }
 }

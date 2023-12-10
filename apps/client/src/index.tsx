@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-import { App } from "pages/App";
+import { App } from "App";
 
 import "leaflet/dist/leaflet.css";
 import "./index.scss";

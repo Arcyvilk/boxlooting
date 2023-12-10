@@ -2,9 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import L from "leaflet";
 
 import { Title } from "components";
-import styled from "styled-components";
 
-export const Map = () => {
+import s from "./MapView.module.scss";
+
+export const MapView = () => {
   const [coords, setCoords] = useState([0, 0]);
   const [map, setMap] = useState<L.Map>();
   const [youMarker, setYouMarker] = useState<L.Marker>();
@@ -52,7 +53,7 @@ export const Map = () => {
           {coords[0]}, {coords[1]}
         </span>
       </div>
-      <StyledMap id="map" />
+      <div className={s.mapview__map} id="map" />
     </>
   );
 };
@@ -82,8 +83,3 @@ const initializeMap = (coords: number[], zoom: number) => {
 
   return map;
 };
-
-const StyledMap = styled.div`
-  width: 800px;
-  height: 600px;
-`;
