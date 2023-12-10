@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 import { Button } from "components";
 import s from "./Home.module.scss";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   const navigateTo = (to: string) => {
-    window.open(`/${to}`, "_self");
+    navigate(to);
   };
 
   return (

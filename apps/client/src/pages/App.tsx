@@ -9,12 +9,14 @@ import { Map } from "pages/Map";
 import { Home } from "pages/Home";
 
 import s from "./App.module.scss";
+import { Navigation } from "containers/Navigation";
 
 export const App = (): JSX.Element => {
   const { boxes = [] } = useBoxes();
 
   return (
     <div className={s.app}>
+      <Navigation />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +26,7 @@ export const App = (): JSX.Element => {
           {boxes.map((box: Box) => (
             <Route path={`/box/${box.id}`} element={<BoxView box={box} />} />
           ))}
+
           <Route element={<Home />} />
         </Routes>
       </BrowserRouter>
