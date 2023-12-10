@@ -4,7 +4,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { App } from "pages/App";
 
 import "leaflet/dist/leaflet.css";
-import "./index.css";
+import "./index.scss";
 
 const queryClient = new QueryClient({
   defaultOptions: {

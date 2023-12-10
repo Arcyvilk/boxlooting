@@ -21,7 +21,6 @@
   "packageManager": "yarn@1.22.11",
   "workspaces": [
     "apps/*",
-    "packages/*",
-    "packages/@boxlooting/*"
+    "packages/*"
   ]
 }

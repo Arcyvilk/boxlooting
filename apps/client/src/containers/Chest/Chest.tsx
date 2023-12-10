@@ -1,10 +1,11 @@
-import Lottie from "react-lottie";
 import { useState } from "react";
+import Lottie from "react-lottie";
 
 import { ChestType, chestMap } from "containers/Chest/chestMap";
 import { useRewards } from "hooks/useAPI";
-import { Flex } from "components";
 import { Gem } from "containers/Gem";
+
+import s from "./Chest.module.scss";
 
 type Props = {
   boxId: string;
@@ -30,11 +31,11 @@ export const Chest = (props: Props) => {
   };
 
   return isRedeemed ? (
-    <Flex flexWrap="wrap">
+    <div className={s.chest}>
       {rewards.links.map((link) => (
         <Gem link={link} />
       ))}
-    </Flex>
+    </div>
   ) : (
     <Lottie
       options={defaultOptions}

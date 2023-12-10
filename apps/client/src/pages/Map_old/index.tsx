@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import * as L from "leaflet";
 
 import { Title } from "components";
-import { Wrapper } from "containers";
 
 const offset = 0.001;
 
@@ -33,7 +31,7 @@ export const Map_old = () => {
   };
 
   return (
-    <Wrapper>
+    <>
       <Title title="Your real-time position" />
       <div>
         <span>
@@ -47,6 +45,6 @@ export const Map_old = () => {
         src={mapUrl}
         style={{ border: "1px solid black" }}
       ></iframe>
-    </Wrapper>
+    </>
   );
 };

@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import L from "leaflet";
 
 import { Title } from "components";
-import { Wrapper } from "containers";
 import styled from "styled-components";
 
 export const Map = () => {
@@ -46,7 +45,7 @@ export const Map = () => {
   };
 
   return (
-    <Wrapper>
+    <>
       <Title title="Your real-time position" />
       <div>
         <span>
@@ -54,7 +53,7 @@ export const Map = () => {
         </span>
       </div>
       <StyledMap id="map" />
-    </Wrapper>
+    </>
   );
 };
 

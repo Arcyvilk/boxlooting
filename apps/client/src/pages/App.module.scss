@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-export const Wrapper = styled.div`
+.app {
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -12,4 +10,4 @@ export const Wrapper = styled.div`
   align-items: center;
   overflow: hidden;
   gap: 24px;
-`;
+}
